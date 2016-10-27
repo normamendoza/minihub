@@ -38,7 +38,7 @@ module.exports = function (grunt) {
         },
         open: {
             all: {
-                path: 'http://localhost:8888'
+                path: 'http://localhost:8888/#login'
             }
         },
         sass: {
@@ -108,9 +108,11 @@ module.exports = function (grunt) {
                 'src/vendors/jquery/dist/jquery.min.js',
                 'src/vendors/jquery-ui/jquery-ui.min.js',
                 'src/vendors/angular/angular.min.js',
-				'src/vendors/angular-route/angular-route.min.js',
+		'src/vendors/angular-route/angular-route.min.js',
                 'src/vendors/bootstrap-sass/assets/javascripts/bootstrap.min.js',
-                'dist/js/app.js'
+                'dist/js/app.js',
+                'dist/js/controllers/LoginController.js',
+                'dist/js/controllers/UserController.js'
                 ],
                 dest: 'dist/libs/app.min.js'
             }

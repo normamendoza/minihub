@@ -1,0 +1,43 @@
+<div ng-controller="UserController"> 
+    <section class="body container-fluid">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-2">
+		<img ng-src="{{user.avatar_url}}" style="max-height:200px"/>
+        <h3 style="font-weight:bold;">{{user.name}}</h3>
+        <h4>{{user.login}}</h4>
+        <hr/>
+        <p><i class="fa fa-group" aria-hidden="true"></i><small>{{user.company}}</small></p>
+        <p><i class="fa fa-map-marker" aria-hidden="true"></i><small>{{user.location}}</small></p>
+        <p><i class="fa fa-clock-o" aria-hidden="true"></i><small>Joined on {{joinedDate}}</small></p>
+    </div>
+    <div class="col-lg-8">
+        <div class="row">
+			<div class="col-lg-10">
+            	<input type="text" placeholder="github username" ng-model="username" class="form-control">
+			</div>
+			<div class="col-lg-2">
+            <button class="btn btn-success" ng-click="buscar()">Buscar</button>
+			</div>
+        </div>
+        <div ng-if="error" style="margin-top: 15px;" class="alert alert-error alert-danger">{{error}}</div>
+	          <a href="{{item.html_url}}" target="_blank" ng-repeat="item in lista" style="color: #333">
+              <hr/>
+				   <div class="row">
+                      <div class="col-lg-8">
+                        <h4 style="color: rgb(51, 122, 183); font-weight:bold;">{{item.name}}</h4>
+                        <small>{{item.description}}</small>
+                      </div>
+                      <div class="col-lg-2">
+                          <span>{{item.language}}</span>
+                      </div>
+                      <div class="col-lg-2">
+                          <p>{{item.stargazers_count}}<i class="fa fa-star" aria-hidden="true"></i></p>
+                          <p>{{item.watchers_count}}<i class="fa fa-eye" aria-hidden="true"></i></p>
+                          <p>{{item.forks_count}}<i class="fa fa-code-fork" aria-hidden="true"></i></p>
+                      </div>
+                   </div>
+              </a>  
+		</div>
+        <div class="col-lg-1"></div>
+    </section>
+    </div>

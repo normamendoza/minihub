@@ -17,7 +17,9 @@ app.controller('LoginController', ['$scope', '$http', 'Shared', '$location', fun
 		  if (error.status == '404'){
                     console.log("Usuario no encontrado");
                     $scope.error = "Usuario o contraseña incorrectos";
-                  }
+          }else {
+ 					$scope.error = "Error al obtener datos del usuario";
+          }
              });
       }
 }]);

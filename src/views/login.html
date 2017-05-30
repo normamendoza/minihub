@@ -6,6 +6,7 @@
 						<h3 class="panel-title">Ingrese sus credenciales</h3>
 					</div>
 					<div class="panel-body">
+                        <div ng-if="error" class="alert alert-error alert-danger">{{error}}</div>
 						<form role="form">
 							<fieldset>
 								<div class="form-group">

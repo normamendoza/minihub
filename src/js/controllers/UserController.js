@@ -18,6 +18,9 @@ app.controller('UserController', ['$scope', '$http', 'Shared', '$location', func
         var username = $scope.username.trim()!= ''? $scope.username : Shared.username;
         $http.get("https://api.github.com/users/"+username, {headers: { Authorization: "Basic " + auth }}).then(
               function (response){
+                angular.copy(response.data,$scope.user);
+                var created = new Date($scope.user.created_at);
+                $scope.joinedDate = created.getDay() + " " + meses[created.getMonth()] + " " + created.getFullYear();
                 $http.get("https://api.github.com/users/"+username+"/repos", {headers: { Authorization: "Basic " + auth }}).then(
                   function (response){
                     angular.copy(response.data,$scope.lista);
